@@ -55,7 +55,7 @@ module.exports = {
 			}
 		});
 	},
-	dashboard: function(req, res) {
+	getUser: function(req, res) {
 		if (!req.user) {
 			res.send('');
 		} else {
@@ -76,27 +76,4 @@ function createToken(user) {
 		exp: moment().add(14, 'days').unix()
 	};
 	return jwt.encode(payload, 'secret');
-}
-
-function positionArray(body) {
-	var pos = [];
-
-	if (body.position1) {
-		pos.push(1);
-	}
-	if (body.position2) {
-		pos.push(2);
-	}
-	if (body.position3) {
-		pos.push(3);
-	}
-	if (body.position4) {
-		pos.push(4);
-	}
-	if (body.position5) {
-		pos.push(5);
-	}
-	if (pos.length > 0) {
-		return pos;
-	}
 }

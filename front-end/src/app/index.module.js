@@ -12,9 +12,9 @@ import {
 import {
 	MainController
 } from './main/main.controller';
-// import {
-// 	AuthController
-// } from './auth/auth.controller';
+import {
+	AuthController
+} from './auth/auth.controller';
 import {
 	GithubContributorService
 } from '../app/components/githubContributor/githubContributor.service';
@@ -28,7 +28,8 @@ import {
 	MalarkeyDirective
 } from '../app/components/malarkey/malarkey.directive';
 
-angular.module('curbsideFront', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr'])
+angular.module('curbsideFront', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'toastr', 'satellizer'])
+	.constant('API_URL', 'http://localhost:5000/')
 	.constant('malarkey', malarkey)
 	.constant('moment', moment)
 	.config(config)

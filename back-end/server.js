@@ -1,5 +1,4 @@
 // Modules
-// var gzippo = require("gzippo");
 var express = require("express");
 var server = express();
 var bodyParser = require('body-parser');
@@ -8,10 +7,14 @@ var mongoose = require('mongoose');
 
 // Middleware
 var cors = require('./services/cors');
+var auth = require('./controllers/auth');
 
 server.use(cors);
 server.use(bodyParser.json());
 
+// USER GET / POST
+server.get("/user/:id", auth.getUser);
+server.post("/auth/register", auth.register);
 
 // Mongo connection
 mongoose.connect("mongodb://localhost:27017/curbside-db", function(err, db) {
