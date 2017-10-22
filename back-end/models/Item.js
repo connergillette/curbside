@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('User', {
+module.exports = mongoose.model('Item', {
 	title: String,
 	description: String,
 	category: String,
@@ -9,5 +9,9 @@ module.exports = mongoose.model('User', {
 	suggested_movers: Number,
 	reward: String,
 	estimated_weight: Number,
-	owner_delivery: Boolean
+	owner_delivery: Boolean,
+	owner: {
+		type: mongoose.Schema.ObjectId,
+		ref: 'User'
+	}
 });

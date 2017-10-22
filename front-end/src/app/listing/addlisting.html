@@ -3,31 +3,30 @@
     <div class="col-md-6">
       <h1 class="dashboard-header">List an item</h1>
     </div>
-    <div class="col-md-6" class="half-width">
-      <form name="register" ng-submit="auth.register()">
+    <div class="col-md-6">
+      <form name="listingForm" ng-submit="listing.addListing()">
         <div class="form-group">
           <label for="title">Item name or type</label>
-          <input ng-model="listing.item.title" type="text" class="form-control custom-input" id="title" placeholder="e.g. \" Kitchen table\ "">
+          <input ng-model="listing.item.title" type="text" class="form-control custom-input" id="title" placeholder="e.g. 'Kitchen table'">
         </div>
         <div class="form-group">
           <label for="description">Item description</label>
-          <input ng-model="listing.item.description" type="text" class="form-control custom-input" id="description" placeholder="e.g. \" Good condition. Made out of cedar. 10 years old.\ "">
+          <input ng-model="listing.item.description" type="text" class="form-control custom-input" id="description" placeholder="e.g. 'Good condition. Made out of cedar.'">
         </div>
         <div class="form-group">
           <label for="category">Item category</label>
-          <input ng-model="listing.item.category" type="text" class="form-control custom-input" id="category" placeholder="e.g. \" Kitchen furniture\ "">
+          <input ng-model="listing.item.category" type="text" class="form-control custom-input" id="category" placeholder="e.g. 'Kitchen furniture'">
         </div>
         <div class="form-group">
           <label for="pickup_start">Start of pickup (the earliest you want to get rid of it)</label>
-          <input ng-model="listing.item.pickup_start" type="datetime" class="form-control custom-input" id="pickup_start">
+          <input ng-model="listing.item.pickup_start" type="date" class="form-control custom-input" id="pickup_start">
         </div>
         <div class="form-group">
           <label for="pickup_end">End of pickup window (when you need it gone by)</label>
-          <input ng-model="listing.item.pickup_end" type="datetime" class="form-control custom-input" id="pickup_end">
+          <input ng-model="listing.item.pickup_end" type="date" class="form-control custom-input" id="pickup_end">
         </div>
+        <input class="custom-button center-block" type="submit" value="Submit" />
+      </form>
     </div>
-    <input class="custom-button center-block" type="submit" value="Submit" />
-    </form>
   </div>
-</div>
 </div>

@@ -10,6 +10,7 @@ var cors = require('./services/cors');
 var checkAuthenticated = require('./services/checkAuthenticated')
 
 var auth = require('./controllers/auth');
+var listing = require('./controllers/listing');
 
 server.use(cors);
 server.use(bodyParser.json());
@@ -26,6 +27,11 @@ server.get("/dashboard", checkAuthenticated, auth.getUser);
 
 // ITEM LISTINGS
 server.post("/listing/add", checkAuthenticated, listing.add);
+server.get("/listing/:id", function(req, res, next) {
+		res.id = req.params.id;
+		next();
+	}
+	checkAuthenticated, listing.get);
 
 // Mongo connection
 mongoose.connect("mongodb://localhost:27017/curbside-db", function(err, db) {
