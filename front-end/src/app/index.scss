@@ -27,6 +27,93 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
   }
 }
 
+// MAIN PAGE ELEMENTS
+body {
+    background-color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: #009688;
+    border-radius: 0px;
+    height: 5.8vw;
+}
+
+.navbar > h1 {
+    font-size: 8vh;
+    vertical-align: bottom;
+    padding-top: 2.2vh;
+    margin: 0px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.navbar > h1 > a {
+    color: #e0e0e0;
+}
+
+.navbar > h1:hover {
+    color: #e0e0e0;
+}
+
+a:-webkit-any-link:hover {
+    color: inherit;
+}
+
+.welcome-header {
+    font-size: 15vh;
+    text-align: center;
+    color: #8d8d8d;
+}
+
+.welcome-page {
+    padding-top: 30vh;
+}
+
+.welcome-page label {
+    font-size: 20px;
+    margin: 0px;
+    color: #8d8d8d;
+}
+
+.custom-button {
+    background-color: #009688;
+    border: none;
+    color: #e0e0e0;
+    width: 200px;
+    height: 60px;
+    margin-top: 20px;
+    font-size: 1.5vw;
+}
+
+.welcome-page .custom-button {
+    padding: 10px 20px 10px 20px;
+}
+
+.custom-input {
+    background-color: #009688;
+    color: #e0e0e0;
+    font-size: 25px;
+    margin-bottom: 30px;
+    height: 50px;
+}
+
+.custom-input::placeholder {
+    color: #e0e0e0;
+}
+
+.half-width {
+    width: 30vw;
+}
+
+form > input {
+    width: 100%;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
