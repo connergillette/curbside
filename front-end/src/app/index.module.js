@@ -16,6 +16,9 @@ import {
 	AuthController
 } from './auth/auth.controller';
 import {
+	ListingController
+} from './listing/listing.controller';
+import {
 	GithubContributorService
 } from '../app/components/githubContributor/githubContributor.service';
 import {
@@ -39,5 +42,6 @@ angular.module('curbsideFront', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitiz
 	.service('webDevTec', WebDevTecService)
 	.controller('MainController', MainController)
 	.controller('AuthController', AuthController)
+	.controller('ListingController', ListingController)
 	.directive('acmeNavbar', NavbarDirective)
 	.directive('acmeMalarkey', MalarkeyDirective);

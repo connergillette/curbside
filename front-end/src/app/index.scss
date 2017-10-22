@@ -64,7 +64,7 @@ a:-webkit-any-link:hover {
     color: inherit;
 }
 
-.welcome-header {
+.welcome-header, .dashboard-header {
     font-size: 15vh;
     text-align: center;
     color: #8d8d8d;
@@ -87,7 +87,7 @@ a:-webkit-any-link:hover {
     width: 200px;
     height: 60px;
     margin-top: 20px;
-    font-size: 1.5vw;
+    font-size: 20px;
 }
 
 .welcome-page .custom-button {
@@ -112,6 +112,10 @@ a:-webkit-any-link:hover {
 
 form > input {
     width: 100%;
+}
+
+.dashboard-header {
+    font-size: 10vh;
 }
 
 /**

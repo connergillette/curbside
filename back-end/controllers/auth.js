@@ -18,7 +18,7 @@ module.exports = {
 				});
 			}
 
-			var user = new User(req.body);
+			var user = new User(req.body.user);
 
 			user.save(function(err, result) {
 				if (err) {
@@ -29,22 +29,22 @@ module.exports = {
 				res.status(200).send({
 					token: createToken(result)
 				});
-			})
+			});
 
 			console.log(user.name + " registered!");
 		});
 	},
 	login: function(req, res) {
+		console.log(req.body.user.email);
 		User.findOne({
-			email: req.body.email
+			email: req.body.user.email
 		}, function(err, user) {
 			if (!user)
 				return res.status(401).send({
 					message: 'Email or Password is invalid'
 				});
 
-			if (req.body.pwd == user.pwd) {
-				console.log(req.body, user.pwd);
+			if (req.body.user.password == user.password) {
 				res.send({
 					token: createToken(user)
 				});
@@ -56,6 +56,7 @@ module.exports = {
 		});
 	},
 	getUser: function(req, res) {
+		console.log(req.body);
 		if (!req.user) {
 			res.send('');
 		} else {

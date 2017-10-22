@@ -1,23 +1,26 @@
 export class AuthController {
-	constructor($auth) {
+	constructor($auth, $http) {
 		'ngInject';
 
+		this.$http = $http;
 		this.$auth = $auth;
 	}
 
 	register() {
 		var vm = this;
-		this.$auth.signup(this.user).then(function(token) {
+		this.$http.post("http://localhost:4000/auth/register", {
+			user: this.user
+		}).then(function(token) {
 			vm.$auth.setToken(token);
-			window.location = "/#/dashboard";
 		});
 	}
 
 	login() {
 		var vm = this;
-		this.$auth.login(this.login.user).then(function(token) {
+		this.$http.post("http://localhost:4000/auth/login", {
+			user: this.user
+		}).then(function(token) {
 			vm.$auth.setToken(token);
-			window.location = "/#/dashboard";
 		});
 	}
 }

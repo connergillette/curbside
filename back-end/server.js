@@ -7,6 +7,8 @@ var mongoose = require('mongoose');
 
 // Middleware
 var cors = require('./services/cors');
+var checkAuthenticated = require('./services/checkAuthenticated')
+
 var auth = require('./controllers/auth');
 
 server.use(cors);
@@ -15,6 +17,15 @@ server.use(bodyParser.json());
 // USER GET / POST
 server.get("/user/:id", auth.getUser);
 server.post("/auth/register", auth.register);
+
+// USER LOGIN
+server.post("/auth/login", checkAuthenticated, auth.login);
+
+// USER DASHBOARD
+server.get("/dashboard", checkAuthenticated, auth.getUser);
+
+// ITEM LISTINGS
+server.post("/listing/add", checkAuthenticated, listing.add);
 
 // Mongo connection
 mongoose.connect("mongodb://localhost:27017/curbside-db", function(err, db) {
